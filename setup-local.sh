@@ -50,7 +50,7 @@ if [ ! -f ".env.local" ]; then
   echo "  Creating .env.local with demo defaults..."
   cat > .env.local << 'EOF'
 # App
-NEXT_PUBLIC_APP_URL=http://localhost:3000
+NEXT_PUBLIC_APP_URL=http://localhost:3001
 NEXT_PUBLIC_APP_NAME=LoveStory
 
 # Supabase (add your real keys when ready)
@@ -77,7 +77,7 @@ echo "  Setup complete!"
 echo ""
 echo "  Starting dev server..."
 echo ""
-echo "  Pages available at http://localhost:3000:"
+echo "  Pages available at http://localhost:3001:"
 echo "    /                  Landing page"
 echo "    /login             Sign in"
 echo "    /dashboard         Studio dashboard"
