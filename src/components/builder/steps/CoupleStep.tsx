@@ -1,15 +1,16 @@
 "use client";
 
 import { useBuilderStore } from "@/store/builderStore";
+import { CoupleDetails } from "@/types";
 import Input from "@/components/ui/Input";
 import Textarea from "@/components/ui/Textarea";
 
 export default function CoupleStep() {
   const { invitation, updateInvitation } = useBuilderStore();
-  const couple = invitation.couple ?? {};
+  const couple = (invitation.couple ?? {}) as Partial<CoupleDetails>;
 
   const update = (field: string, value: string) => {
-    updateInvitation({ couple: { ...couple, [field]: value } });
+    updateInvitation({ couple: { ...couple, [field]: value } as CoupleDetails });
   };
 
   return (
