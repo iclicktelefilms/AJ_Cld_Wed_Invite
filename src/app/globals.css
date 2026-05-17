@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --font-cinzel: 'Cinzel Decorative', serif;
+    --font-playfair: 'Playfair Display', serif;
+    --font-cormorant: 'Cormorant Garamond', serif;
+    --font-lora: 'Lora', serif;
+    --font-inter: 'Inter', sans-serif;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-white text-neutral-900;
+    font-family: var(--font-inter);
+  }
+
+  ::selection {
+    @apply bg-gold-500/30;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-neutral-300 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-neutral-400;
+  }
+}
+
+@layer components {
+  .font-heading {
+    font-family: var(--font-heading, var(--font-playfair));
+  }
+
+  .font-body {
+    font-family: var(--font-body, var(--font-cormorant));
+  }
+
+  .invitation-section {
+    @apply relative overflow-hidden;
+  }
+
+  .gold-divider {
+    @apply w-24 h-px mx-auto;
+    background: linear-gradient(90deg, transparent, var(--color-primary, #D4AF37), transparent);
+  }
+
+  .shimmer-text {
+    background: linear-gradient(
+      90deg,
+      var(--color-primary, #D4AF37) 0%,
+      #fff 50%,
+      var(--color-primary, #D4AF37) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s linear infinite;
+  }
+
+  .glass-card {
+    @apply backdrop-blur-md;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .luxury-border {
+    border-color: var(--color-border, rgba(212, 175, 55, 0.25));
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
